@@ -8,7 +8,7 @@ locals {
   alb_listern_arn = data.aws_ssm_parameter.alb_listener_arn.value
   frontend_alb_listener_arn = data.aws_ssm_parameter.frontend_alb_listener_arn.value
   sg_id = data.aws_ssm_parameter.sg_id.value
-  listener_arn = "${var.component}" == "frontend" ? frontend_listener_arn : alb_listern_arn
+  listener_arn = "${var.component}" == "frontend" ? "frontend_listener_arn": "alb_listern_arn"
   host_header = "${var.component}" == "frontend" ? "${var.projectname}-${var.environment}.${var.domain_name}" : "${var.component}.backend-alb-${var.environment}.${var.domain_name}"
   private_subnet_id = split("," , data.aws_ssm_parameter.private_subnet_ids.value)[0]
   common_tags = {
