@@ -25,7 +25,7 @@ connection {
     type     = "ssh"
     user     = "ec2-user"
     password = "DevOps321"
-    host     = aws_instance.var.component.private_ip
+    host     = aws_instance.main.private_ip
   }
 
   provisioner "file" {
@@ -209,7 +209,7 @@ resource "aws_lb_listener_rule" "main" {
 
   condition {
     host_header {
-      values = local.host_header
+      values = [local.host_header]
     }
   }
 }
