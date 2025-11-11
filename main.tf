@@ -37,7 +37,7 @@ connection {
     inline = [ 
       "chmod +x  /tmp/bootstrap.sh",
       #"sudo sh /tmp/bootstrap.sh"
-      "sudo sh /tmp/bootstrap.sh v${ar.component} ${var.environment}"
+      "sudo sh /tmp/bootstrap.sh ${var.component} ${var.environment}"
      ]
     
   }
