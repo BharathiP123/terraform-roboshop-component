@@ -3,8 +3,8 @@ data "aws_ssm_parameter" "private_subnet_ids" {
   name = "/${var.projectname}/${var.environment}/private_sub_ids"
 }
 
-data "aws_ssm_parameter" "catalogue_sg_id" {
-  name = "/${var.projectname}/${var.environment}/catalogue_sg_id"
+data "aws_ssm_parameter" "sg_id" {
+  name = "/${var.projectname}/${var.environment}/${var.component}"
 }
 
 data "aws_ami" "myami"{
@@ -37,6 +37,10 @@ data "aws_ssm_parameter" "vpc_id" {
 
 data "aws_ssm_parameter" "alb_listener_arn" {
   name = "/${var.projectname}/${var.environment}/backend_alb_listener_arn"
+}
+
+data "aws_ssm_parameter" "frontend_alb_listener_arn" {
+  name = "/${var.projectname}/${var.environment}/frontend_alb_listener_arn"
 }
 
 

@@ -11,6 +11,18 @@ variable "environment" {
   
 }
 
+
+
 variable "domain_name" {
     default = "bpotla.com"
 }
+
+variable "component" {
+    type = string
+  
+}
+
+variable "rule_priority" {
+
+}
+
