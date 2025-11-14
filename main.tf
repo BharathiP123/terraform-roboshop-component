@@ -79,7 +79,7 @@ resource "aws_lb_target_group" "main" {
     interval = 10
     matcher = "200"
     path = local.contenx
-    port = 8080
+    port = local.tg_port
     protocol = "HTTP"
     timeout = 2
     unhealthy_threshold = 2
